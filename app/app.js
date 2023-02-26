@@ -9,6 +9,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
+app.get("/", function(res, req){
+  res.render("home");
+});
 
 app.listen(3000, function() {
     console.log("Server started on http://localhost:3000");
