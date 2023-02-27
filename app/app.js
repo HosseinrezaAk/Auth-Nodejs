@@ -1,5 +1,5 @@
 const express = require("express");
-const bodyparser = require("body-parser");
+const bodyParser = require("body-parser");
 const ejs = require("ejs");
 
 const app = express();
@@ -9,8 +9,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-app.get("/", function(res, req){
+app.get("/", function(req, res){
   res.render("home");
+});
+
+app.get("/login", function(req, res){
+  res.render("login");
+});
+
+app.get("/register", function(req, res){
+  res.render("register");
 });
 
 app.listen(3000, function() {
