@@ -31,6 +31,26 @@ app.get("/register", function(req, res){
   res.render("register");
 });
 
+app.post("/register", function(req, res){
+
+  const newUser = new User({
+    email: req.body.email,
+    password : req.body.password
+  });
+
+  newUser.save( function(err){
+    if(err){
+      console.log(err);
+    } else{
+      res.render("secrets");
+    }
+  });
+});
+
+
+
+
+
 app.listen(3000, function() {
     console.log("Server started on http://localhost:3000");
   });
