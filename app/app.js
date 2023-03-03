@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
   password: String
 });
 
-const secret = "thisisoursecret.";
+const secret = process.env.SECRET;
 userSchema.plugin(encrypt, {secret: secret , encryptedFields: ["password"]})
 
 const User = new mongoose.model("User", userSchema);
