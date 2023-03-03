@@ -33,6 +33,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 - Add mongoose-encryption package
 - Add string secret-key to encrypt and decrypt password
+- Add .env file to hide secret-key which used for encryption.
 
 <br>
 
