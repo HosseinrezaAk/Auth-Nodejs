@@ -45,6 +45,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 - In hashing we don't need any SECRET_KEY to encrypt and decrypt
 - In hasing it's easy to encrypt but almost impossible to decrypt.
+- Install md5 package : `npm i md5` , and you can hash whatever you want like this : `md5(password)`
 
 <br>
 
