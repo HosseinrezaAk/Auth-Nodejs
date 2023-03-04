@@ -44,7 +44,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ### <p align="center">Level 3: Add Hashing</p>
 
 - In hashing we don't need any SECRET_KEY to encrypt and decrypt
-
+- In hasing it's easy to encrypt but almost impossible to decrypt.
 
 <br>
 
