@@ -38,3 +38,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 <hr>
+
+<br>
+
+### <p align="center">Level 3: Add Hashing</p>
+
+- In hashing we don't need any SECRET_KEY to encrypt and decrypt
+
+
+<br>
+
+<hr>
