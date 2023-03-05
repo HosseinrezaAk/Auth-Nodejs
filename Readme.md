@@ -56,6 +56,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ### <p align="center">Level 4: Salting and Hashing</p>
 
 - Append a random string to your password to make the passowrd longer and harder for hackers to hack with hash tables.
+- The salt string will save into database with the hashed password
 
 
 <br>
