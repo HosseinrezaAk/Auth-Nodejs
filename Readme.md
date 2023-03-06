@@ -58,6 +58,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 - Append a random string to your password to make the passowrd longer and harder for hackers to hack with hash tables.
 - The salt string will save into database with the hashed password
 - The package we are using in Node is `bcrypt` and you can set how many rounds you want to salt the password. 
+- require the package : `const bcrypt = require('bcrypt');`
 
 <br>
 
