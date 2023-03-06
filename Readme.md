@@ -59,7 +59,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 - The salt string will save into database with the hashed password
 - The package we are using in Node is `bcrypt` and you can set how many rounds you want to salt the password. 
 - require the package : `const bcrypt = require('bcrypt');`
-
+- You can hash password with this function : `bcrypt.hash`
+```
+  bcrypt.hash(req.body.password , saltRounds, function(err, hash){
+        // make your object and save it to DB
+    });
+```
 <br>
 
 <hr>
