@@ -3,10 +3,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-// const encrypt = require("mongoose-encryption");
-// const md5 = require("md5");
-const bcrypt = require('bcrypt');
-const saltRounds = 3;
+const session = require('express-session');
+const passport = require('passport');
+const passportLocalMongoose = require("passport-local-mongoose");
+
 
 const app = express();
 
