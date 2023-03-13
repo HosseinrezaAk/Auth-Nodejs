@@ -87,6 +87,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 - OAuth 
     - Granular Access Levels : Developer can determine what kind of data need from user facebook or gmail or whatever login system he's using.
     - Read/ Read+Write Access : Developer can ask for read only to retrive data or to read and write access, for example getting access to post something into facebook. 
+    - Revoke Access : Let users to deauthorized the access that they granted to your website from facebook, they don't actually
+    have to go onto your website where maybe you're less keen to give up this access.
 - 
 
 <br>
