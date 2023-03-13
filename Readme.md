@@ -80,3 +80,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 <hr>
+<br>
+
+### <p align="center">Level 6: OAuth and sign in with google</p>
+
+- OAuth 
+    - Granular Access Levels : Developer can determine what kind of data need from user facebook or gmail or whatever login system he's using.
+    
+- 
+
+<br>
+
+<hr>
