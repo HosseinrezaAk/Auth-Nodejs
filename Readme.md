@@ -72,6 +72,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ### <p align="center">Level 5: Cookie and Session</p>
 
+- Cookie is small text file saved on user's computer
+- Session is the overall amount of time spent on an activity.
+- We used `Session` , ` Passport` , ` Passport-local-mongoose` packages to implement session and coockie for the login.
+-
 
 <br>
 
