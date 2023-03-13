@@ -101,6 +101,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     - Step 5 : Recieve Authorization code : : After loggin in ad granting permissions then our website will recieve authorization code from facebook
     - Step 6 : Exchange authCode with AccessToken :: we can save it into our DB and use it to request for pieces of information subsequently.
 
+In this project we using Google OAuth and the packages we're using is `passport-google-oauth20` and here is the [ link ](https://www.passportjs.org/packages/passport-google-oauth20/).
+
 <br>
 
 <hr>
