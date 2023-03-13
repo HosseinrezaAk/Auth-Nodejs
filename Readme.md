@@ -89,7 +89,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     - Read/ Read+Write Access : Developer can ask for read only to retrive data or to read and write access, for example getting access to post something into facebook. 
     - Revoke Access : Let users to deauthorized the access that they granted to your website from facebook, they don't actually
     have to go onto your website where maybe you're less keen to give up this access.
-- 
+
+<br>
+
+- Implementation
+    
+    - Step 1 : Setup your app : : Tell facebook that we need your authorization system to authorize our users, and facebook gives you `App ID` or `Client ID`.
+    - Step 2 : Redirect to Authenticate : : Give users the option to Authenticate with facebook ( like a button)
+    - Step 3 : User logs in
+   
 
 <br>
 
