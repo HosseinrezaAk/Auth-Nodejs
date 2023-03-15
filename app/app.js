@@ -1,3 +1,4 @@
+
 require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -7,7 +8,7 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const findOrCreate = require("mongoose-findorcreate");
+
 
 
 
@@ -33,35 +34,72 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.plugin(passportLocalMongoose);
-userSchema.plugin(findOrCreate);
+
 const User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy());
 
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+//serialize user
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
 
+//deserialize user
+passport.deserializeUser(function(id, done) {
 
+      User.findById(id).then(user=>{
+          done(null, user);
+      })
+      .catch((err)=>{ return done(err); });
+
+});
 
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/secrets"
-  // userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+  callbackURL: 'http://localhost:3000/auth/google/secrets'
 },
-function(accessToken, refreshToken, profile, cb) {
-  User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    return cb(err, user);
-  });
+async function (accessToken, refreshToken, profile, done) {
+  try {
+    console.log(profile);
+    // Find or create user in your database
+    let user = await User.findOne({ googleId: profile.id });
+    if (!user) {
+      // Create new user in database
+      const username = Array.isArray(profile.emails) && profile.emails.length > 0 ? profile.emails[0].value.split('@')[0] : '';
+      const newUser = new User({
+        username: profile.displayName,
+        googleId: profile.id
+      });
+      user = await newUser.save();
+    }
+    return done(null, user);
+  } catch (err) {
+    return done(err);
+  }
 }
 ));
-
 
 
 
 app.get("/", function(req, res){
   res.render("home");
 });
+
+app.get("/auth/google",
+  passport.authenticate("google", { scope: ["profile"] })
+  );
+
+  app.get("/auth/google/secrets", 
+  passport.authenticate("google", { failureRedirect: "/login" }),
+    function(req, res) {
+      // Successful authentication, redirect secrets.
+      res.redirect("/secrets");
+    }
+  );
+
+
+
 
 app.get("/login", function(req, res){
   res.render("login");
