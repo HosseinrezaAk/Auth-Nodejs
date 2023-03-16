@@ -63,7 +63,7 @@ passport.use(new GoogleStrategy({
 },
 async function (accessToken, refreshToken, profile, done) {
   try {
-    console.log(profile);
+    
     // Find or create user in your database
     let user = await User.findOne({ googleId: profile.id });
     if (!user) {
@@ -132,7 +132,6 @@ app.get("/submit", function( req, res){
 
 app.post("/submit", function( req, res){
   const submittedSecret = req.body.secret;
-  console.log(req.user);
   User.findById(req.user.id).then( function(foundUser){
     if(foundUser){
       foundUser.secret = submittedSecret;
