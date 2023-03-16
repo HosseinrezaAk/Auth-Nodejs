@@ -31,7 +31,8 @@ mongoose.connect("mongodb://localhost:27017/userDB");
 const userSchema = new mongoose.Schema({
   email: String,
   password: String,
-  googleId: String
+  googleId: String,
+  secret: String
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -126,6 +127,9 @@ app.get("/submit", function( req, res){
   }
 });
 
+app.post("/submit", function( req, res){
+  
+});
 
 
 app.get("/logout", function(req, res){
