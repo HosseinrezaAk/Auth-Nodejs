@@ -114,7 +114,7 @@ app.get("/register", function(req, res){
 app.get("/secrets",function(req,res){
   User.find({"secret": {$ne: null} }).then(function(foundUsers){
     if(foundUsers){
-      res.render("secrets", {userWithSecrets: foundUsers})
+      res.render("secrets", {usersWithSecrets: foundUsers})
     }
   })
   .catch(function(err){
